@@ -47,7 +47,7 @@ pipeline {
       when {
         beforeAgent true
         not {
-          tag pattern: "v\\d+\\.\\d+\\.\\d+*", comparator: "REGEXP"
+          tag pattern: 'v\\d+.*', comparator: "REGEXP"
         }
       }
       steps {
