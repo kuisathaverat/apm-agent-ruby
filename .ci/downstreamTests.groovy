@@ -68,10 +68,7 @@ pipeline {
       }
       steps {
         deleteDir()
-        gitCheckout(basedir: "${BASE_DIR}",
-          branch: "${params.BRANCH_SPECIFIER}",
-          repo: "${REPO}",
-          credentialsId: "${JOB_GIT_CREDENTIALS}")
+        gitCheckout(basedir: "${BASE_DIR}")
         stash allowEmpty: true, name: 'source', useDefaultExcludes: false
       }
     }
